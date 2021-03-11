@@ -8,4 +8,14 @@ balckMac EFI files for Z7-sp7s2
 2、download Catalina app
 3、make startup disk and replace EFI
 
-> Wifi not work, download [HeliPort](https://github.com/OpenIntelWireless/HeliPort)
+---
+- rerealize 
+  - [x] Audio input
+  - [x] Bright adjustment
+  - [x] Bluetooth 
+  - [x] Five Energy Saving
+  - [ ] Audio output
+  - [ ] Power management 
+
+
+> audio output can be archived using bluetooth,  Wifi not work, download [HeliPort](https://github.com/OpenIntelWireless/HeliPort)

@@ -11,7 +11,7 @@
 				<key>APSN</key>
 				<false/>
 				<key>PluginType</key>
-				<false/>
+				<true/>
 				<key>PStates</key>
 				<false/>
 				<key>APLF</key>
@@ -23,11 +23,13 @@
 			<false/>
 			<key>DropOem</key>
 			<false/>
+			<key>UseSystemIO</key>
+			<false/>
 			<key>NoDynamicExtract</key>
 			<false/>
 		</dict>
 		<key>DisableASPM</key>
-		<true/>
+		<false/>
 		<key>smartUPS</key>
 		<false/>
 		<key>DSDT</key>
@@ -78,16 +80,6 @@
 				</dict>
 				<dict>
 					<key>Find</key>
-					<data>oAqTU1RBUwE=</data>
-					<key>Replace</key>
-					<data>oAqRCv8L//8=</data>
-					<key>Disabled</key>
-					<false/>
-					<key>Comment</key>
-					<string>RTC fix</string>
-				</dict>
-				<dict>
-					<key>Find</key>
 					<data>cA1DUFVTQ0swAENVVTA=</data>
 					<key>Replace</key>
 					<data>AAAAAAAAAAAAAAAAAAA=</data>
@@ -128,33 +120,13 @@
 				</dict>
 				<dict>
 					<key>Find</key>
-					<data>RUMwXw==</data>
+					<data>oAqTU1RBUwE=</data>
 					<key>Replace</key>
-					<data>RUNfXw==</data>
+					<data>oAqRCv8L//8=</data>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Comment</key>
-					<string>EC0 to EC</string>
-				</dict>
-				<dict>
-					<key>Find</key>
-					<data>SF9FQw==</data>
-					<key>Replace</key>
-					<data>RUNfXw==</data>
-					<key>Disabled</key>
-					<true/>
-					<key>Comment</key>
-					<string>H_EC to EC</string>
-				</dict>
-				<dict>
-					<key>Find</key>
-					<data>RUNEVg==</data>
-					<key>Replace</key>
-					<data>RUNfXw==</data>
-					<key>Disabled</key>
-					<true/>
-					<key>Comment</key>
-					<string>ECDV to EC</string>
+					<string>RTC fix</string>
 				</dict>
 				<dict>
 					<key>Find</key>
@@ -166,29 +138,47 @@
 					<key>Comment</key>
 					<string>PNP0C09 to PNPFFFF</string>
 				</dict>
+				<dict>
+					<key>Find</key>
+					<data>R0ZYMA==</data>
+					<key>Replace</key>
+					<data>SUdQVQ==</data>
+					<key>Disabled</key>
+					<false/>
+					<key>Comment</key>
+					<string>change GFX0 to IGPU</string>
+				</dict>
 			</array>
 			<key>Fixes</key>
 			<dict>
+				<key>FixDisplay</key>
+				<false/>
+				<key>FixMutex</key>
+				<false/>
+				<key>AddIMEI</key>
+				<false/>
 				<key>FixHPET</key>
 				<true/>
-				<key>FixHDA</key>
-				<false/>
-				<key>FixRTC</key>
-				<true/>
 				<key>FixTMR</key>
-				<true/>
-				<key>FixShutdown</key>
-				<true/>
-				<key>FixIPIC</key>
-				<true/>
-				<key>FixMutex</key>
 				<false/>
 				<key>FixDarwin7</key>
 				<false/>
+				<key>FixShutdown</key>
+				<false/>
+				<key>FixRTC</key>
+				<true/>
+				<key>FixIPIC</key>
+				<true/>
 				<key>DeleteUnused</key>
 				<false/>
-				<key>FixRegions</key>
+				<key>FixSBUS</key>
+				<false/>
+				<key>AddPNLF</key>
 				<true/>
+				<key>FixHDA</key>
+				<false/>
+				<key>FixRegions</key>
+				<false/>
 			</dict>
 			<key>DropOEM_DSM</key>
 			<false/>
@@ -221,7 +211,7 @@
 		<key>Debug</key>
 		<false/>
 		<key>Arguments</key>
-		<string>npci=0x2000 dart=0 -no_compat_check -v brcmfx-driver=0 agdpmod=pikera nv_disable=1</string>
+		<string>npci=0x2000 dart=0 -no_compat_check -v brcmfx-driver=0 agdpmod=pikera nv_disable=1 alcid=layout-id</string>
 		<key>CustomLogo</key>
 		<false/>
 		<key>Secure</key>
@@ -358,127 +348,6 @@
 		<false/>
 		<key>Debug</key>
 		<false/>
-		<key>KextsToPatch</key>
-		<array>
-			<dict>
-				<key>Find</key>
-				<data>g72M/v//EA==</data>
-				<key>Comment</key>
-				<string>USB port limit patch</string>
-				<key>Disabled</key>
-				<false/>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>com.apple.driver.usb.AppleUSBXHCIPCI</string>
-				<key>Replace</key>
-				<data>g72M/v//Gw==</data>
-				<key>MatchOS</key>
-				<string>10.11.x</string>
-			</dict>
-			<dict>
-				<key>Find</key>
-				<data>g710////EA==</data>
-				<key>Comment</key>
-				<string>USB port limit patch</string>
-				<key>Disabled</key>
-				<false/>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>com.apple.driver.usb.AppleUSBXHCIPCI</string>
-				<key>Replace</key>
-				<data>g710////Gw==</data>
-				<key>MatchOS</key>
-				<string>10.12.x</string>
-			</dict>
-			<dict>
-				<key>Find</key>
-				<data>g32IDw+DpwQAAA==</data>
-				<key>Comment</key>
-				<string>USB port limit patch by PMHeart</string>
-				<key>Disabled</key>
-				<false/>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>com.apple.driver.usb.AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>g32ID5CQkJCQkA==</data>
-				<key>MatchOS</key>
-				<string>10.13.x</string>
-			</dict>
-			<dict>
-				<key>Find</key>
-				<data>g/sPDw==</data>
-				<key>Name</key>
-				<string>com.apple.iokit.IOUSBHostFamily</string>
-				<key>Replace</key>
-				<data>g/s/Dw==</data>
-				<key>Disabled</key>
-				<false/>
-				<key>Comment</key>
-				<string>USB Port limit patch 10.14.x 10.15.x #1 modify by DalianSky(credits PMheart)</string>
-				<key>InfoPlistPatch</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Find</key>
-				<data>g+MP0w==</data>
-				<key>Name</key>
-				<string>com.apple.iokit.IOUSBHostFamily</string>
-				<key>Replace</key>
-				<data>g+M/0w==</data>
-				<key>Disabled</key>
-				<false/>
-				<key>Comment</key>
-				<string>USB port limit patch 10.14.x modify by DalianSky(credit PMHeart)</string>
-				<key>InfoPlistPatch</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Find</key>
-				<data>g/kPDw==</data>
-				<key>Name</key>
-				<string>com.apple.driver.usb.AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>g/k/Dw==</data>
-				<key>Disabled</key>
-				<false/>
-				<key>Comment</key>
-				<string>USB Port limit patch 10.15.x #1 modify by DalianSky</string>
-				<key>InfoPlistPatch</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Find</key>
-				<data>g/sPDw==</data>
-				<key>Name</key>
-				<string>com.apple.driver.usb.AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>g/s/Dw==</data>
-				<key>Disabled</key>
-				<false/>
-				<key>Comment</key>
-				<string>USB Port limit patch 10.14.x modify by DalianSky(credits PMheart)</string>
-				<key>InfoPlistPatch</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Find</key>
-				<data>g/8PDw==</data>
-				<key>Name</key>
-				<string>com.apple.driver.usb.AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>g/8/Dw==</data>
-				<key>Disabled</key>
-				<false/>
-				<key>Comment</key>
-				<string>USB Port limit patch 10.14.x modify by DalianSky(credits PMheart)</string>
-				<key>InfoPlistPatch</key>
-				<false/>
-			</dict>
-		</array>
 		<key>EightApple</key>
 		<true/>
 		<key>DellSMBIOSPatch</key>
@@ -486,7 +355,7 @@
 		<key>AppleIntelCPUPM</key>
 		<true/>
 		<key>KernelCpu</key>
-		<false/>
+		<true/>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
@@ -548,10 +417,14 @@
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
-		<key>InjectKexts</key>
-		<string>Yes</string>
+		<key>NvidiaWeb</key>
+		<true/>
 		<key>InjectSystemID</key>
 		<true/>
+		<key>ExposeSysVariables</key>
+		<true/>
+		<key>InjectKexts</key>
+		<string>Yes</string>
 	</dict>
 	<key>Quirks</key>
 	<dict>

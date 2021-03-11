@@ -9,7 +9,7 @@ balckMac EFI files for Z7-sp7s2
 3、make startup disk and replace EFI
 
 ---
-- rerealize 
+- realize 
   - [x] Audio input
   - [x] Bright adjustment
   - [x] Bluetooth 

@@ -18,4 +18,6 @@ balckMac EFI files for Z7-sp7s2
   - [ ] Power management 
 
 
+![realtek audio](./EFI/assets/realtekALC892.png)
+
 > audio output can be archived using bluetooth,  Wifi not work, download [HeliPort](https://github.com/OpenIntelWireless/HeliPort)
